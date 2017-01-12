@@ -3,6 +3,9 @@ def swap(first_variable, line, column):
     complete_first_variable = find_first_variable(line, column)
     complete_second_variable = find_second_variable(line, column)
 
+    swapped_line = swapped_line.replace(complete_second_variable, complete_first_variable)
+    swapped_line = swapped_line.replace(complete_first_variable, complete_second_variable, 1)
+
     return swapped_line
 
 def find_first_variable(line, column):
