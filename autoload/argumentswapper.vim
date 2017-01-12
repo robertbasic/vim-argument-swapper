@@ -3,10 +3,9 @@ python3 << endpython3
 import vim
 from argumentswapper import swapper
 
-first_variable = vim.eval('expand("<cword>")')
 (row, column) = vim.current.window.cursor
 line = vim.current.line
-new_line = swapper.swap(first_variable, line, column)
+new_line = swapper.swap(line, column)
 vim.current.buffer[row - 1] = new_line
 
 endpython3

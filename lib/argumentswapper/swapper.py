@@ -1,10 +1,11 @@
-def swap(first_variable, line, column):
+def swap(line, column):
     swapped_line = line
-    complete_first_variable = find_first_variable(line, column)
-    complete_second_variable = find_second_variable(line, column)
 
-    swapped_line = swapped_line.replace(complete_second_variable, complete_first_variable)
-    swapped_line = swapped_line.replace(complete_first_variable, complete_second_variable, 1)
+    first_variable = find_first_variable(line, column)
+    second_variable = find_second_variable(line, column)
+
+    swapped_line = swapped_line.replace(second_variable, first_variable)
+    swapped_line = swapped_line.replace(first_variable, second_variable, 1)
 
     return swapped_line
 
