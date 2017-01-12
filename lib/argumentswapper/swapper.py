@@ -1,6 +1,8 @@
 def swap(first_variable, line, column):
     swapped_line = line
     complete_first_variable = find_first_variable(line, column)
+    complete_second_variable = find_second_variable(line, column)
+
     return swapped_line
 
 def find_first_variable(line, column):
@@ -18,3 +20,13 @@ def find_first_variable(line, column):
     end_column = column + end_column
 
     return line[start_column:end_column]
+
+def find_second_variable(line, column):
+    start_column = column + line[column:].find(",")
+
+    end_column = line[start_column + 1:].find(",")
+    if end_column == -1:
+        end_column = line[start_column + 1:].find(")")
+    end_column = start_column + end_column + 1
+
+    return line[start_column:end_column].lstrip(', ')
