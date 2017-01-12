@@ -38,5 +38,16 @@ class SwapperTestCase(unittest.TestCase):
         expected = "$x = func($a, $b, $c);"
         self.assertEqual(expected, result)
 
+    def test_swapping_with_multiple_variables_second_and_third(self):
+        first_variable = "c"
+        #       0123456789091234567890
+        line = "$x = func($a, $c, $b);"
+        column = 14
+
+        result = swap(first_variable, line, column)
+
+        expected = "$x = func($a, $b, $c);"
+        self.assertEqual(expected, result)
+
 if __name__ == '__main__':
     unittest.main()
