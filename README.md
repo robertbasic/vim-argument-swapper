@@ -8,6 +8,12 @@ Usage
 
 Put cursor over the first argument, `:ArgumentSwapperSwap`, done.
 
+Map it to a leader shortcut, for example:
+
+``` vim
+map <leader>as :ArgumentSwapperSwap<cr>
+```
+
 Why?
 ====
 
