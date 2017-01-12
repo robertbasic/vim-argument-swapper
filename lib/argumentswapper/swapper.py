@@ -22,7 +22,7 @@ def find_first_variable(line, column):
         raise IndexError
     end_column = column + end_column
 
-    return line[start_column:end_column]
+    return line[start_column:end_column].lstrip(' ')
 
 def find_second_variable(line, column):
     start_column = column + line[column:].find(",")
