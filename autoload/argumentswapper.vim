@@ -1,5 +1,5 @@
 function! argumentswapper#ArgumentSwapperSwap()
-python3 << endpython3
+python << endpython
 import vim
 from argumentswapper import swapper
 
@@ -8,11 +8,11 @@ line = vim.current.line
 new_line = swapper.swap(line, column)
 vim.current.buffer[row - 1] = new_line
 
-endpython3
+endpython
 endfunction
 
 function! argumentswapper#SetupPyImports()
-python3 << endpython3
+python << endpython
 import os
 import sys
 import vim
@@ -26,5 +26,5 @@ if python_plugin_path_loaded == 0:
     python_plugin_path = os.path.abspath('%s/../lib' % (plugin_path))
     sys.path.append(python_plugin_path)
 
-endpython3
+endpython
 endfunction
