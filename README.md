@@ -1,10 +1,8 @@
-vim-argument-swapper
-==========================
+# vim-argument-swapper
 
 A VIM plugin to swap 2 arguments in a method call/definition.
 
-Usage
-=====
+# Usage
 
 Put cursor over the first argument, `:ArgumentSwapperSwap`, done.
 
@@ -14,8 +12,7 @@ Map it to a leader shortcut, for example:
 map <leader>as :ArgumentSwapperSwap<cr>
 ```
 
-Why?
-====
+# Why?
 
 To make it easy to turn:
 
@@ -29,9 +26,14 @@ into:
 in_array($needle, $haystack);
 ```
 
-Installation
-============
+# Installation
 
 Using [vim-plug](https://github.com/junegunn/vim-plug):
 
 `Plug 'robertbasic/vim-argument-swapper'`
+
+# Configuration
+
+By default the plugin uses Python 3.
+
+`let g:argumentswapper_python_version = 2` in your `.vimrc` file to use Python 2.
